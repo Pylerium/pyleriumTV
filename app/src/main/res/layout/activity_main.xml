@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/home_backdrop"
+    android:clipChildren="false">
+
+    <ImageView
+        android:id="@+id/wallpaper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:importantForAccessibility="no"
+        android:scaleType="centerCrop"
+        android:visibility="gone" />
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        android:descendantFocusability="blocksDescendants"
+        android:focusable="false"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/page"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipChildren="false"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/hero"
+                android:layout_width="match_parent"
+                android:layout_height="600dp"
+                android:clipChildren="false">
+
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:layout_marginStart="48dp" android:layout_marginTop="32dp" android:orientation="vertical">
+                    <TextView android:id="@+id/brand" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="@string/brand" android:textColor="@color/platypus_orange" android:textSize="19sp" android:letterSpacing="0.16" android:textStyle="bold" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5dp"
+                        android:text="@string/brand_caption" android:textColor="@color/platypus_muted" android:textSize="9sp" android:letterSpacing="0.16" />
+                </LinearLayout>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end" android:layout_marginEnd="48dp" android:layout_marginBottom="24dp"
+                    android:text="@string/favourites" android:textSize="10sp" android:letterSpacing="0.18" android:textColor="@color/platypus_teal" />
+                <View
+                    android:id="@+id/glow"
+                    android:layout_width="900dp"
+                    android:layout_height="420dp"
+                    android:layout_gravity="bottom|start"
+                    android:layout_marginStart="-260dp"
+                    android:layout_marginBottom="-190dp"
+                    android:alpha="0" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="48dp"
+                    android:layout_marginTop="112dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/greeting"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/platypus_muted"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/clock"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="-4dp"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="-0.02"
+                        android:textColor="@color/platypus_ink"
+                        android:textSize="72sp" />
+
+                    <TextView
+                        android:id="@+id/date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/platypus_muted"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/pills"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|end"
+                    android:layout_marginTop="34dp"
+                    android:layout_marginEnd="48dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/pillInputs"
+                        style="@style/Pill"
+                        android:drawableStart="@drawable/ic_input"
+                        android:text="@string/inputs" />
+
+                    <TextView
+                        android:id="@+id/pillWifi"
+                        style="@style/Pill"
+                        android:layout_marginStart="10dp"
+                        android:drawableStart="@drawable/ic_wifi"
+                        android:text="@string/wifi" />
+
+                    <TextView
+                        android:id="@+id/pillSettings"
+                        style="@style/Pill"
+                        android:layout_marginStart="10dp"
+                        android:drawableStart="@drawable/ic_settings"
+                        android:contentDescription="@string/settings"
+                        android:drawablePadding="0dp"
+                        android:paddingStart="13dp"
+                        android:paddingEnd="13dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/dockTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|start"
+                    android:layout_marginStart="48dp"
+                    android:layout_marginBottom="20dp"
+                    android:alpha="0"
+                    android:singleLine="true"
+                    android:textColor="@color/platypus_ink"
+                    android:textSize="30sp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/dockBand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                android:clipChildren="false"
+                android:paddingTop="22dp"
+                android:paddingBottom="10dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/dock"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:focusable="false"
+                    android:overScrollMode="never" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/gridTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="48dp"
+                android:layout_marginBottom="20dp"
+                android:text="@string/all_apps"
+                android:textColor="@color/platypus_teal"
+                android:textSize="15sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/grid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:focusable="false"
+                android:overScrollMode="never" />
+
+            <Space
+                android:id="@+id/bottomSpace"
+                android:layout_width="match_parent"
+                android:layout_height="600dp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView android:id="@+id/navigationHint" android:layout_width="match_parent" android:layout_height="32dp"
+        android:layout_gravity="bottom" android:gravity="center_vertical|end" android:paddingEnd="48dp"
+        android:background="#F0050709" android:text="@string/navigation_hint" android:textColor="@color/platypus_muted" android:textSize="12sp" />
+    <LinearLayout
+        android:id="@+id/inputsMenu"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:visibility="gone" />
+
+    <com.cleantv.launcher.GlassHighlight
+        android:id="@+id/highlight"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0" />
+</FrameLayout>

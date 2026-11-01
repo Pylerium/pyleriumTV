@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- PlatypusBrowser Design Tokens -->
+    <color name="platypus_canvas">#050709</color>
+    <color name="platypus_surface">#111315</color>
+    <color name="platypus_raised">#20282E</color>
+    <color name="platypus_raised_hover">#222E36</color>
+    <color name="platypus_line">#2A353C</color>
+    <color name="platypus_ink">#F3F3F3</color>
+    <color name="platypus_muted">#A3B4BC</color>
+    <color name="platypus_teal">#26D8EE</color>
+    <color name="platypus_teal_dim">#12363B</color>
+    <color name="platypus_orange">#FF7B1C</color>
+</resources>
